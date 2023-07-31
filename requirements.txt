@@ -1,7 +1,3 @@
 Flask
-matplotlib
 pandas
-seaborn
-sklearn
-imblearn
 gunicorn
