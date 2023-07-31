@@ -1,10 +1,7 @@
-pandas
-numpy
-seaborn
-matplotlib
-imblearn
-datasist
-scikit-learn
-pickle5
 Flask
-json
+matplotlib
+pandas
+seaborn
+sklearn
+imblearn
+gunicorn

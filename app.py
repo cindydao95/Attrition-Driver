@@ -1,6 +1,6 @@
-import pickle5 as pickle
+import pickle
 from flask import Flask, request, app, render_template
-import numpy as np
+
 import pandas as pd
 import os
 
@@ -18,17 +18,17 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/predictdata',method = ['GET','POST'])
+@app.route('/predictdata',methods = ['GET','POST'])
 def predict_datapoint():
     if request.method=="GET":
         return render_template('index.html')
     else:
         data = request.form
-        input_data_arr = np.array(list(data.values()))
-        transfomred_input_data = transform_data.transform(input_data_arr.reshape(1,-1))
+        input_data_df = pd.DataFrame(data,index=[0])
+        transfomred_input_data = transform_data.transform(input_data_df)
         results = knnmodel.predict(transfomred_input_data)
     return render_template('index.html',results = results[0])
 
 
 if __name__=="__main__":
-    app.run(host = 0.0.0.0, debug=True)
+    app.run(host='0.0.0.0', debug=True)
