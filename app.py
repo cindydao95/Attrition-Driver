@@ -4,11 +4,11 @@ from flask import Flask, request, app, render_template
 import pandas as pd
 import os
 
-preprocessed_data_path = os.path.join("pickle_files","preprocessor.pkl")
+preprocessed_data_path = "preprocessor.pkl"
 with open(preprocessed_data_path,"rb") as f:
     transform_data = pickle.load(f)
 
-model_path  = os.path.join("pickle_files","knn.pkl")
+model_path  = "knn.pkl"
 with open(model_path,'rb') as f1:
     knnmodel= pickle.load(f1)
 
