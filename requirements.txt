@@ -2,6 +2,6 @@ Flask
 matplotlib
 pandas
 seaborn
-sklearn
+scikit-learn
 imblearn
 gunicorn
