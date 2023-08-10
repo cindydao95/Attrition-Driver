@@ -9,16 +9,21 @@
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  
-</head>
+<img src = "gh_logo.PNG" width="591px" height="206px" alt="GHlogo"/>
 
-<div class="login">
+</head>
+<body>
+    
+    
+
+
+    <div class="login">
   
-  <form action="{{ url_for('predict_datapoint')}}" method="post">
-   <h1>
+    <form action="{{ url_for('predict_datapoint')}}" method="post">
+    <h1>
        <legend>Predict Driver Attrition</legend>
-   </h1>
-   <div class="mb-3">
+    </h1>
+    <div class="mb-3">
        <label class="form-label">Gender</label>
        <select class="form-control" name="Gender" placeholder="Enter you Gender" required>
            <option class="placeholder" selected disabled value="">Select your Gender</option>
@@ -64,22 +69,26 @@
        <input class="form-control" type="number" name="AGE"
            placeholder="Enter your AGE" min='18' max='100' />
    </div>
+
    <div class="mb-3">
        <label class="form-label">Workhrdy</label>
        <input class="form-control" type="number" name="Workhrdy" step="0.1"
            placeholder="Enter your Workhrdy" min='1' max='100' />
    </div>
+
    <div class="mb-3">
     <label class="form-label">TrfTime</label>
     <input class="form-control" type="number" name="TrfTime"
         placeholder="Enter your TrfTime" min='0' max='200' />
   </div>
+
    <div class="mb-3">
        <input class="btn btn-primary" type="submit" value="Predict Driver Attrition" required />
    </div>
-</form>
+
+    </form>
 <h2>
   THE  prediction is {{results}}
 </h2>
-<body>
+</body>
 </html>
